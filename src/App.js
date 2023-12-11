@@ -36,6 +36,7 @@ const App = () => {
     e.preventDefault()
     // console.log("This is event from search 9for preventDefault: ", e);
     setQuery(search);
+    setSearch("");
   }
 
   return (
@@ -51,7 +52,9 @@ const App = () => {
         key={recipe.recipe.label}
         title={recipe.recipe.label}
         calories={recipe.recipe.calories}
-        image={recipe.recipe.image}/>
+        image={recipe.recipe.image}
+        ingredients={recipe.recipe.ingredients}/>
+        
       ))}
     </div>
   );
