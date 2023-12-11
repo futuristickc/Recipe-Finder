@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Recipe from './Recipes';
+import Recipe from './Recipe';
 
 const App = () => {
 
@@ -15,7 +15,7 @@ const App = () => {
   const exampleReq = `https://api.edamam.com/search?q=${query}&app_id=${App_ID}&app_key=${App_Key}`;
   
   useEffect(() => {
-    console.log('Effect has been run');
+    // console.log('Effect has been run');
     getRecipes();
   }, [query]);
 
@@ -41,6 +41,7 @@ const App = () => {
 
   return (
     <div className='App'>
+      <h1 className='title'>Find Your Recipe</h1>
       <form className='search-form' onSubmit={getSearch}>
         <input className="search-bar" type='text' value={search} onChange={updateSearch}/>
         <button className='search-button' type="submit">
@@ -52,7 +53,7 @@ const App = () => {
         <Recipe 
         key={recipe.recipe.label}
         title={recipe.recipe.label}
-        calories={recipe.recipe.calories}
+        calories={Math.round(recipe.recipe.calories)}
         image={recipe.recipe.image}
         ingredients={recipe.recipe.ingredients}/>
         

@@ -25,5 +25,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  /* align-items: center; */
+}
+
+.title {
+  display: flex;
+  justify-content: center;
 }
